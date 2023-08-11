@@ -1,6 +1,6 @@
 const { User } = require("../models");
-const { AuthenticationError } = require("apollo-server-express");
 const { signToken } = require("../utils/auth");
+const { AuthenticationError } = require("apollo-server-express");
 
 const resolvers = {
   Query: {
@@ -9,6 +9,7 @@ const resolvers = {
         const userData = await User.findOne({ _id: context.user._id }).select(
           "-__v -password"
         );
+        //.populate('books');
         return userData;
       }
       throw new AuthenticationError("Not logged in");
@@ -18,14 +19,12 @@ const resolvers = {
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
       if (!user) {
-        throw new AuthenticationError("Incorrect Username");
+        throw new AuthenticationError("username error");
       }
-
       const correctPassword = await user.isCorrectPassword(password);
       if (!correctPassword) {
-        throw new AuthenticationError("Incorrect Password");
+        throw new AuthenticationError("Password is wrong");
       }
-
       const token = signToken(user);
       return { token, user };
     },
@@ -41,9 +40,9 @@ const resolvers = {
           { $push: { savedBooks: bookData } },
           { new: true, runValidators: true }
         );
-        return updatedUser || null;
+        return updatedUser;
       }
-      throw new AuthenticationError("Not logged in");
+      throw AuthenticationError;
     },
     removeBook: async (parent, { bookId }, context) => {
       if (context.user) {
@@ -52,11 +51,9 @@ const resolvers = {
           { $pull: { savedBooks: { bookId: bookId } } },
           { new: true }
         );
-        return updatedUser || null;
+        return updatedUser;
       }
-      throw new AuthenticationError("Not logged in");
     },
   },
 };
-
 module.exports = resolvers;
