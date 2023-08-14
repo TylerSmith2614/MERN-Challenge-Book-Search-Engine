@@ -1,16 +1,19 @@
-import { gql } from "@apollo/client";
+// setup for React and Apollo Client
+import { gql } from '@apollo/client';
 
-export const GET_theUser = gql`
+
+export const GET_ME = gql`
   {
     theUser {
       _id
       username
       email
+      bookCount
       savedBooks {
         bookId
-        title
-        author
+        authors
         description
+        title
         image
         link
       }
