@@ -13,7 +13,7 @@ import {
 import { setContext } from "@apollo/client/link/context";
 
 const httpLink = createHttpLink({
-  uri: "https://mern-book-search-frontend.onrender.com", // Update the URL here
+  uri: "https://mern-book-search-1.onrender.com", // Update the URL here
 });
 const authLink = setContext((_, { headers }) => {
   const token = localStorage.getItem("id_token");
