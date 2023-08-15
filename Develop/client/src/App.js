@@ -13,9 +13,8 @@ import {
 import { setContext } from "@apollo/client/link/context";
 
 const httpLink = createHttpLink({
-  uri: "/graphql",
+  uri: "https://mern-book-search-frontend.onrender.com", // Update the URL here
 });
-//http://localhost:3001/graphql
 const authLink = setContext((_, { headers }) => {
   const token = localStorage.getItem("id_token");
   return {
