@@ -1,7 +1,6 @@
 const { Schema, model } = require("mongoose");
 const bcrypt = require("bcrypt");
 
-
 const bookSchema = require("./Book");
 
 const userSchema = new Schema(
@@ -13,7 +12,7 @@ const userSchema = new Schema(
     },
     email: {
       type: String,
-      required: true,
+      required: false,
       unique: true,
       match: [/.+@.+\..+/, "Must use a valid email address"],
     },
