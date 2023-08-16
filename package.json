@@ -2,12 +2,12 @@
   "name": "googlebooks-app",
   "version": "1.0.0",
   "description": "",
-  "main": "develop/server/server.js",
+  "main": "Develop/server/server.js",
   "scripts": {
-    "start": "node develop/server/server.js",
-    "develop": "concurrently \"cd develop/server && npm run watch\" \"cd develop/client && npm start\"",
-    "install": "cd develop/server && npm i && cd ../client && npm i",
-    "build": "cd develop/client && npm run build"
+    "start": "node Develop/server/server.js",
+    "develop": "concurrently \"cd Develop/server && npm run watch\" \"cd Develop/client && npm start\"",
+    "install": "cd Develop/server && npm i && cd ../client && npm i",
+    "build": "cd Develop/client && npm run build"
   },
   "keywords": [],
   "author": "",
