@@ -1,0 +1,21 @@
+{
+  "name": "googlebooks-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "develop/server/server.js",
+  "scripts": {
+    "start": "node develop/server/server.js",
+    "develop": "concurrently \"cd develop/server && npm run watch\" \"cd develop/client && npm start\"",
+    "install": "cd develop/server && npm i && cd ../client && npm i",
+    "build": "cd develop/client && npm run build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^5.3.0"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.8.1"
+  }
+}
