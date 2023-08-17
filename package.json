@@ -7,10 +7,12 @@
   "description": "",
   "main": "Develop/server/server.js",
   "scripts": {
-    "start": "node Develop/server/server.js",
+    "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix Develop/client\"",
     "develop": "concurrently \"cd Develop/server && npm run watch\" \"cd Develop/client && npm start\"",
     "install": "cd Develop/server && npm i && cd ../client && npm i",
-    "build": "cd Develop/client && npm run build"
+    "build": "cd Develop/client && npm run build",
+    "heroku-postbuild": "npm run install-Develop/client && npm run build",
+    "server": "nodemon Develop/server/server.js"
   },
   "keywords": [],
   "author": "",
