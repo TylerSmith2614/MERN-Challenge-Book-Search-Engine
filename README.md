@@ -2,7 +2,12 @@
 
 ## Deployed Link
 
-Note: When the app is deployed locally and and the uri is set to uri: "/graphql", then the sign in function and save books functions all work. But my heroku account I am unable to log into so i tried deploying on render.com. I got both the front end and back end to deploy but cannot resolve the errors to get rid of the 404 errors.
+https://murmuring-beach-04584-2cf73e1122ee.herokuapp.com/
+
+Note: When the app is deployed locally and and the uri is set to uri: "/graphql", then the sign in function and save books functions all work. But my heroku account I am unable to log into so i tried deploying on render.com. I got both the front end and back end to deploy but cannot resolve the errors to get rid of the 404 errors: in the heroku logs "--tail i get the following errors
+ls: cannot access '/app/build/static/js/\*.js': No such file or directory"
+
+I have spent over 5 hours trying to get this app to deploy but have not found a solution yet.
 
 https://mern-book-search-frontend.onrender.com
 
