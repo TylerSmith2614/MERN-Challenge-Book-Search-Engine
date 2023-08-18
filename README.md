@@ -1,5 +1,10 @@
 # 21 MERN: Book Search Engine
 
+## Video of Application Functionality
+
+This video link demonstrates the functionality of the application. It was run on Heroku Local.
+https://drive.google.com/file/d/1JDj5TCLmUyEp8w8XwLmbiu7HFukAS9OH/view
+
 ## Deployed Link
 
 https://murmuring-beach-04584-2cf73e1122ee.herokuapp.com/
